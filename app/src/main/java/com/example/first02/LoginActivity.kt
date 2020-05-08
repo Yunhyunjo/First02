@@ -19,7 +19,6 @@ class LoginActivity : AppCompatActivity() {
             }else{
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish()
             }
         }
         register.setOnClickListener {
@@ -34,9 +33,9 @@ class LoginActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 0 -> {
-                    val id = data!!.getStringExtra("id")
+                    val id = data!!.getStringExtra("id").toString()
                     et_id.setText(id)
-                    val pwd = data!!.getStringExtra("pwd")
+                    val pwd = data!!.getStringExtra("pwd").toString()
                     et_pwd.setText(pwd)
                 }
             }
